@@ -1,0 +1,14 @@
+{% extends 'homeee.html' %}
+{% block content %}
+<h1>Twitter profile {{tasks[0].user}}</h1>
+
+<ul>
+    {%for t in tasks %}
+    <li>
+        {{ t.mesaj }} {{t.timestamp}}
+    </li>
+    {% endfor %}
+</ul>
+
+<a href="{{ url_for('homepage') }}">Back</a>
+{% endblock %}

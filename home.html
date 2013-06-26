@@ -1,0 +1,14 @@
+<h1>TODO list for: {{g.username}}</h1>
+
+<ul>
+    {%for t in tasks %}
+    <li>
+        {{t.text}} [Done: {{ t.done}}]
+        <a href="{{ url_for('setdone', id=t.id) }}">set done</a>
+        <a href="{{ url_for('delete', id=t.id) }}">delete</a>
+    </li>
+    {% endfor %}
+</ul>
+
+<a href="{{ url_for('add') }}">Add new task</a>
+

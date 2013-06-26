@@ -1,0 +1,16 @@
+{% extends 'homeee.html' %}
+{% block content %}
+<h1>Twitter</h1>
+
+<ul>
+    {%for t in tasks %}
+    <li>
+        <a href="{{ url_for('prof',user=t.user)}}">{{t.user}}</a>
+        {{ t.mesaj }} {{t.timestamp}}
+    </li>
+    {% endfor %}
+</ul>
+
+<a href="{{ url_for('add') }}">adauga mesaj nou</a>
+{% endblock %}
+
